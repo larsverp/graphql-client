@@ -13,7 +13,7 @@ class Client
      */
     private $httpClient;
 
-    private array $customHeaders;
+    private array $customHeaders = [];
 
     /**
      * @var ResponseBuilder
