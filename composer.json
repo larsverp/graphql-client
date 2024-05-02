@@ -1,7 +1,7 @@
 {
-  "name": "softonic/graphql-client",
+  "name": "larsverp/graphql-client",
   "type": "library",
-  "description": "Softonic GraphQL client",
+  "description": "larsverp GraphQL client",
   "keywords": [
     "softonic",
     "oauth2",
@@ -9,9 +9,9 @@
     "client"
   ],
   "license": "Apache-2.0",
-  "homepage": "https://github.com/softonic/graphql-client",
+  "homepage": "https://github.com/larsverp/graphql-client",
   "support": {
-    "issues": "https://github.com/softonic/graphql-client/issues"
+    "issues": "https://github.com/larsverp/graphql-client/issues"
   },
   "require": {
     "php": "^8.0",
