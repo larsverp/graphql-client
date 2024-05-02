@@ -13,6 +13,8 @@ class Client
      */
     private $httpClient;
 
+    private array $customHeaders;
+
     /**
      * @var ResponseBuilder
      */
@@ -42,6 +44,11 @@ class Client
         return $this->executeQuery($query, $mutation);
     }
 
+    public function addHeaders(array $headers): void
+    {
+        $this->customHeaders = array_merge($this->customHeaders, $headers);
+    }
+
     private function executeQuery(string $query, $variables): Response
     {
         $body = ['query' => $query];
@@ -49,11 +56,17 @@ class Client
             $body['variables'] = $variables;
         }
 
+        $headers = [
+                'Content-Type' => 'application/json',
+        ];
+
+        if ($this->customHeaders) {
+            $headers = array_merge($this->customHeaders, $headers);
+        }
+
         $options = [
             'body'    => json_encode($body, JSON_UNESCAPED_SLASHES),
-            'headers' => [
-                'Content-Type' => 'application/json',
-            ],
+            'headers' => $headers,
         ];
 
         try {
