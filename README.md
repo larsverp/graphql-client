@@ -23,7 +23,7 @@ PHP Client for [GraphQL](http://graphql.org/)
 
 Via composer:
 ```
-composer require softonic/graphql-client
+composer require larsverp/graphql-client
 ```
 
 ## Documentation
